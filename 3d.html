@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            width: 200px;
+            height: 200px;
+            list-style: none;
+            padding: 0;
+            position: relative;
+            transform-style: preserve-3d;
+            margin: 300px auto;
+            transition: all 60s;
+        }
+
+        body {
+            perspective: 1000px;
+        }
+
+        body:hover ul {
+            transform: rotateX(2700deg) rotateZ(2700deg) rotateY(2700deg);
+        }
+
+        li {
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            line-height: 200px;
+            border: 1px solid black;
+            font-size: 200px;
+            display: flex;
+        }
+
+        li:nth-child(1) {
+            left: -200px;
+            transform-origin: right;
+            transform: rotateY(90deg);
+
+        }
+
+        li:nth-child(2) {
+            left: 200px;
+            transform-origin: left;
+            transform: rotateY(-90deg);
+        }
+
+        li:nth-child(3) {
+            top: 200px;
+            transform-origin: top;
+            transform: rotateX(90deg);
+        }
+
+        li:nth-child(4) {
+            top: -200px;
+            transform-origin: bottom;
+            transform: rotateX(-90deg);
+        }
+
+        li:nth-child(5) {}
+
+        li:nth-child(6) {
+            transform: translateZ(200px);
+        }
+
+        span {
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        li:nth-child(even) span {
+            background-color: blue;
+        }
+
+        .one {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .two {
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .three {
+            justify-content: space-around;
+        }
+
+        .three span:nth-child(1) {
+            margin: 10px;
+        }
+
+        .three span:nth-child(2) {
+            align-self: center;
+        }
+
+        .three span:nth-child(3) {
+            margin: 10px;
+            align-self: flex-end;
+        }
+
+        .last {
+            justify-content: space-around;
+        }
+
+        .last div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .last>span {
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="one">
+            <span></span>
+        </li>
+        <li class="last">
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </li>
+        <li class="three">
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+        <li class="last">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </li>
+        <li class="last">
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+            <span></span>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </li>
+        <li class="two">
+            <span></span>
+            <span></span>
+        </li>
+    </ul>
+</body>
+
+</html>
